@@ -1,5 +1,4 @@
 const supertest = require('supertest');
-const { model: userModel } = require('automata-user-management');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { deleteAll, dropTable } = require('automata-db');
 const { errors } = require('automata-utils');
@@ -17,7 +16,6 @@ const api = supertest(app);
 describe('/notes', () => {
   afterEach(async () => {
     await deleteAll(tableName);
-    await deleteAll(userModel.tableName);
   });
   afterAll(() => dropTable(tableName));
 
