@@ -1,10 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { initDB, connectDB, closeDB } = require('automata-db');
 
-const { DB_URL } = require('../src/config');
-
 beforeAll(async () => {
-  await initDB(DB_URL);
+  await initDB(':memory:');
   await connectDB();
 });
 

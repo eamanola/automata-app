@@ -1,13 +1,13 @@
 {
   "name": "automata-app",
-  "version": "0.0.12",
+  "version": "0.0.14",
   "description": "pre configured express app",
   "main": "dist/index.bundle.js",
   "files": [
     "./dist/index.bundle.js"
   ],
   "scripts": {
-    "test": "npm run build && AUTOMATA_SQLITE_FILE=:memory: SECRET=shhhhh jest",
+    "test": "npm run build && SECRET=shhhhh jest",
     "lint": "eslint .",
     "build": "webpack",
     "prepack": "npm run build"
