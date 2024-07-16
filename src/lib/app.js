@@ -21,9 +21,9 @@ if (NODE_ENV !== 'test') { app.use(morgan('tiny')); }
 
 app.get('/health', (req, res) => { res.status(200).send('OK'); });
 
-app.use('/email-verification', emailVerification);
-
 app.use(users);
+
+app.use('/email-verification', emailVerification);
 
 app.use(errorHandler(errors, { defaultTo500: true }));
 
