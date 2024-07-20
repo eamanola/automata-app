@@ -1,6 +1,6 @@
 {
   "name": "automata-app",
-  "version": "0.0.17",
+  "version": "0.0.19",
   "description": "pre configured express app",
   "main": "dist/index.bundle.js",
   "files": [
@@ -29,7 +29,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.24.7",
     "automata-cache": "^0.0.2",
-    "automata-rest": "^0.0.21",
+    "automata-rest": "^0.0.23",
     "babel-loader": "^9.1.3",
     "bump-pkg-json": "^0.1.3",
     "eslint": "^8.57.0",
@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "automata-email-verification": "^0.0.9",
-    "automata-user-management": "^0.0.22",
+    "automata-user-management": "^0.0.23",
     "automata-utils": "^0.0.6",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
