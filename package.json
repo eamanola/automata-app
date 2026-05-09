@@ -1,6 +1,6 @@
 {
   "name": "automata-app",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "pre configured express app",
   "main": "dist/index.bundle.js",
   "files": [
@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "build": "webpack",
     "prepack": "npm run build",
-    "prepare": "npm run build"
+    "prepare": "husky || true"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.24.7",
     "automata-cache": "github:eamanola/automata-cache",
+    "automata-db": "github:eamanola/automata-db",
     "automata-rest": "github:eamanola/automata-rest",
     "babel-loader": "^10.1.1",
     "bump-pkg-json": "^0.1.3",
