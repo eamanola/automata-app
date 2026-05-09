@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 const { router: restRouter } = require('automata-rest');
 
 const { NODE_ENV } = require('../../config');

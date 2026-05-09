@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 const { initDB, connectDB, closeDB } = require('automata-db');
 
 beforeAll(async () => {

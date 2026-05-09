@@ -1,5 +1,4 @@
 const supertest = require('supertest');
-// eslint-disable-next-line import/no-extraneous-dependencies
 const { deleteAll, dropTable } = require('automata-db');
 const { errors } = require('automata-utils');
 
