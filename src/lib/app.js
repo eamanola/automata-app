@@ -9,7 +9,6 @@ const { NODE_ENV } = require('../config');
 const { errorHandler } = middlewares;
 
 const appBuilder = ({ db, origin = ['http://localhost:3000'] }) => {
-  console.log(db);
   const app = express();
 
   app.use(cors({ origin }));

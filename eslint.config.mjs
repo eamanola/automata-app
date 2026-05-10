@@ -5,7 +5,7 @@ import { configs as importConfigs } from 'eslint-plugin-import-x';
 import globals from 'globals';
 import js from '@eslint/js';
 
-const SHOW_WARNINGS = 'off';
+const SHOW_WARNINGS = 'warn';
 
 export default [
   // artifacts
