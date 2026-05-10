@@ -8,7 +8,12 @@ const { NODE_ENV } = require('../config');
 
 const { errorHandler } = middlewares;
 
-const appBuilder = ({ db, origin = ['http://localhost:3000'] }) => {
+const appBuilder = ({
+  db,
+  EMAIL_VERIFICATION_SECRET,
+  origin = ['http://localhost:3000'],
+  SECRET,
+}) => {
   const app = express();
 
   app.use(cors({ origin }));
@@ -19,7 +24,7 @@ const appBuilder = ({ db, origin = ['http://localhost:3000'] }) => {
 
   app.get('/health', (req, res) => { res.status(200).send('OK'); });
 
-  app.use(users({ db }));
+  app.use(users({ db, EMAIL_VERIFICATION_SECRET, SECRET }));
 
   app.use(errorHandler(errors, { defaultTo500: true }));
 

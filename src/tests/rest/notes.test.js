@@ -16,7 +16,10 @@ describe('/notes', () => {
   beforeAll(async () => {
     db = global.client;
 
-    const app = appBuilder({ db });
+    const SECRET = `shhh ${Math.random()}`;
+    const EMAIL_VERIFICATION_SECRET = `sshh ${Math.random()}`;
+
+    const app = appBuilder({ db, EMAIL_VERIFICATION_SECRET, SECRET });
     app.use(BASE_URL, router({ db }));
     api = supertest(app);
   });
