@@ -8,12 +8,9 @@ importers:
 
   .:
     dependencies:
-      automata-email-verification:
-        specifier: github:eamanola/automata-email-verification
-        version: git+https://git@github.com:eamanola/automata-email-verification.git#16208b46205b7b8da9bf42ecb20d013c359e6443
       automata-user-management:
         specifier: github:eamanola/automata-user-management
-        version: git+https://git@github.com:eamanola/automata-user-management.git#90e9c75b858ee6f106fd6f1cd0df83450bc09df5
+        version: git+https://git@github.com:eamanola/automata-user-management.git#bc1e5c99424ae027aab389fe753adf4862680f8f
       automata-utils:
         specifier: github:eamanola/automata-utils
         version: git+https://git@github.com:eamanola/automata-utils.git#5632caceabde51451bae400352435b884b64121f
@@ -1234,17 +1231,13 @@ packages:
     resolution: {commit: 1c2e79fa8f0cdb95752dec7b03aa70105a881744, repo: git@github.com:eamanola/automata-db.git, type: git}
     version: 0.1.1
 
-  automata-email-verification@git+https://git@github.com:eamanola/automata-email-verification.git#16208b46205b7b8da9bf42ecb20d013c359e6443:
-    resolution: {commit: 16208b46205b7b8da9bf42ecb20d013c359e6443, repo: git@github.com:eamanola/automata-email-verification.git, type: git}
-    version: 0.1.2
-
   automata-rest@git+https://git@github.com:eamanola/automata-rest.git#76f04ed1f421551b38e14f515bc79dcd42d57ef9:
     resolution: {commit: 76f04ed1f421551b38e14f515bc79dcd42d57ef9, repo: git@github.com:eamanola/automata-rest.git, type: git}
     version: 0.1.1
 
-  automata-user-management@git+https://git@github.com:eamanola/automata-user-management.git#90e9c75b858ee6f106fd6f1cd0df83450bc09df5:
-    resolution: {commit: 90e9c75b858ee6f106fd6f1cd0df83450bc09df5, repo: git@github.com:eamanola/automata-user-management.git, type: git}
-    version: 0.1.2
+  automata-user-management@git+https://git@github.com:eamanola/automata-user-management.git#bc1e5c99424ae027aab389fe753adf4862680f8f:
+    resolution: {commit: bc1e5c99424ae027aab389fe753adf4862680f8f, repo: git@github.com:eamanola/automata-user-management.git, type: git}
+    version: 0.1.5
 
   automata-utils@git+https://git@github.com:eamanola/automata-utils.git#5632caceabde51451bae400352435b884b64121f:
     resolution: {commit: 5632caceabde51451bae400352435b884b64121f, repo: git@github.com:eamanola/automata-utils.git, type: git}
@@ -4489,23 +4482,6 @@ snapshots:
       - snappy
       - socks
 
-  automata-email-verification@git+https://git@github.com:eamanola/automata-email-verification.git#16208b46205b7b8da9bf42ecb20d013c359e6443:
-    dependencies:
-      automata-db: git+https://git@github.com:eamanola/automata-db.git#1c2e79fa8f0cdb95752dec7b03aa70105a881744
-      automata-utils: git+https://git@github.com:eamanola/automata-utils.git#5632caceabde51451bae400352435b884b64121f
-      dotenv: 17.4.2
-      express: 5.2.1
-      yup: 1.7.1
-    transitivePeerDependencies:
-      - '@aws-sdk/credential-providers'
-      - '@mongodb-js/zstd'
-      - gcp-metadata
-      - kerberos
-      - mongodb-client-encryption
-      - snappy
-      - socks
-      - supports-color
-
   automata-rest@git+https://git@github.com:eamanola/automata-rest.git#76f04ed1f421551b38e14f515bc79dcd42d57ef9:
     dependencies:
       automata-cache: https://codeload.github.com/eamanola/automata-cache/tar.gz/17044177f61dc0cfee06c60adc5e56ada523fc2a
@@ -4526,7 +4502,7 @@ snapshots:
       - socks
       - supports-color
 
-  automata-user-management@git+https://git@github.com:eamanola/automata-user-management.git#90e9c75b858ee6f106fd6f1cd0df83450bc09df5:
+  automata-user-management@git+https://git@github.com:eamanola/automata-user-management.git#bc1e5c99424ae027aab389fe753adf4862680f8f:
     dependencies:
       automata-db: git+https://git@github.com:eamanola/automata-db.git#1c2e79fa8f0cdb95752dec7b03aa70105a881744
       automata-utils: git+https://git@github.com:eamanola/automata-utils.git#5632caceabde51451bae400352435b884b64121f
@@ -6346,7 +6322,7 @@ snapshots:
 
   tunnel-agent@0.6.0:
     dependencies:
-      safe-buffer: 5.1.2
+      safe-buffer: 5.2.1
 
   type-check@0.4.0:
     dependencies:
