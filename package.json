@@ -1,6 +1,6 @@
 {
   "name": "automata-app",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "pre configured express app",
   "main": "dist/index.bundle.js",
   "type": "commonjs",
@@ -8,7 +8,7 @@
     "dist/index.bundle.js"
   ],
   "scripts": {
-    "test": "npm run build && SECRET=shhhhh jest",
+    "test": "npm run build && jest",
     "lint": "eslint .",
     "build": "webpack",
     "prepack": "npm run build",
