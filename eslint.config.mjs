@@ -112,7 +112,7 @@ export default [
       ],
       'prefer-named-capture-group': ['error'],
       'require-unicode-regexp': ['error'],
-      'sort-keys': ['warn'],
+      'sort-keys': [SHOW_WARNINGS],
     },
   },
 

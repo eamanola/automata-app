@@ -14,9 +14,10 @@ const indexes = [{ columns: ['isPublic'], name: `idx-${tableName}-isPublic` }];
 
 const table = { columns, indexes, name: tableName };
 
-const router = restRouter(null, {
+const router = ({ db }) => restRouter(null, {
   resultKey: 'note',
   resultsKey: 'notes',
+  db,
   table,
   useCache: true,
   userRequired: true,

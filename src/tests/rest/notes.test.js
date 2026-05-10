@@ -6,17 +6,28 @@ const {
   createNote, getNote, getToken, validNote,
 } = require('./note-helpers');
 const { tableName, router } = require('./notes');
-const app = require('../../../dist/index.bundle');
+const appBuilder = require('../../../dist/index.bundle');
 
 const BASE_URL = '/notes';
-app.use(BASE_URL, router);
-const api = supertest(app);
+let api;
+let db;
 
 describe('/notes', () => {
-  afterEach(async () => {
-    await deleteAll(tableName);
+  beforeAll(async () => {
+    db = global.client;
+
+    const app = appBuilder({ db });
+    app.use(BASE_URL, router({ db }));
+    api = supertest(app);
   });
-  afterAll(() => dropTable(tableName));
+
+  afterEach(async () => {
+    await deleteAll(db, tableName);
+  });
+
+  afterAll(async () => {
+    await dropTable(db, tableName);
+  });
 
   it('should throw accessDenied, if user missing', async () => {
     const { accessDenied } = errors;

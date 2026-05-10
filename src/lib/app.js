@@ -2,29 +2,28 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const { middlewares, errors } = require('automata-utils');
-const { router: emailVerification } = require('automata-email-verification');
 const { router: users } = require('automata-user-management');
 
 const { NODE_ENV } = require('../config');
 
 const { errorHandler } = middlewares;
 
-const app = express();
+const appBuilder = ({ db, origin = ['http://localhost:3000'] }) => {
+  const app = express();
 
-app.use(cors({
-  // TODO:
-  origin: ['http://localhost:3000'],
-}));
-app.use(express.json());
+  app.use(cors({ origin }));
 
-if (NODE_ENV !== 'test') { app.use(morgan('tiny')); }
+  app.use(express.json());
 
-app.get('/health', (req, res) => { res.status(200).send('OK'); });
+  if (NODE_ENV !== 'test') { app.use(morgan('tiny')); }
 
-app.use(users);
+  app.get('/health', (req, res) => { res.status(200).send('OK'); });
 
-app.use('/email-verification', emailVerification);
+  app.use(users({ db }));
 
-app.use(errorHandler(errors, { defaultTo500: true }));
+  app.use(errorHandler(errors, { defaultTo500: true }));
 
-module.exports = app;
+  return app;
+};
+
+module.exports = appBuilder;
