@@ -1,21 +1,18 @@
 const supertest = require('supertest');
-const { deleteAll, dropTable } = require('automata-db');
 const { errors } = require('automata-utils');
 
 const {
   createNote, getNote, getToken, validNote,
 } = require('./note-helpers');
 const { tableName, router } = require('./notes');
-const appBuilder = require('../../../dist/index.bundle');
+const appBuilder = require('../..');
 
 const BASE_URL = '/notes';
 let api;
-let db;
+const { db } = global;
 
 describe('/notes', () => {
   beforeAll(async () => {
-    db = global.client;
-
     const SECRET = `shhh ${Math.random()}`;
     const EMAIL_VERIFICATION_SECRET = `sshh ${Math.random()}`;
 
@@ -25,11 +22,11 @@ describe('/notes', () => {
   });
 
   afterEach(async () => {
-    await deleteAll(db, tableName);
+    await db.deleteAll(tableName);
   });
 
   afterAll(async () => {
-    await dropTable(db, tableName);
+    await db.dropTable(tableName);
   });
 
   it('should throw accessDenied, if user missing', async () => {
