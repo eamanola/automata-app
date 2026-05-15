@@ -1,6 +1,6 @@
 {
   "name": "automata-app",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "pre configured express app",
   "main": "dist/index.bundle.js",
   "type": "commonjs",
@@ -33,6 +33,7 @@
     "automata-cache": "github:eamanola/automata-cache",
     "automata-db": "github:eamanola/automata-db",
     "automata-rest": "github:eamanola/automata-rest",
+    "better-sqlite3": "^12.10.0",
     "bump-pkg-json": "^0.1.3",
     "esbuild": "^0.28.0",
     "eslint": "^10.3.0",
