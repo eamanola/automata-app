@@ -46,31 +46,45 @@ export default [
     languageOptions: {
       globals: {
         ...globals.jest,
+        ...globals.node,
       },
+    },
+    rules: {
+      'import-x/no-extraneous-dependencies': ['error', { devDependencies: true }],
     },
   },
 
   // dev files
   {
+    files: ['eslint.config.mjs', 'esbuild.config.cjs'],
     languageOptions: {
       globals: {
         ...globals.node,
       },
     },
     rules: {
-      'import-x/no-extraneous-dependencies': [
-        'error',
-        {
-          devDependencies: [
-            '**/*.test.js',
-            'eslint.config.mjs',
-            'esbuild.config.cjs',
-            'src/tests/**',
-            'src/tests/rest/**',
-            'jest/**',
-          ],
-        },
-      ],
+      'import-x/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    },
+  },
+
+  // project specific
+  {
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
+  },
+  {
+    files: ['src/tests/**', 'src/tests/rest/**'],
+    languageOptions: {
+      globals: {
+        ...globals.jest,
+        ...globals.node,
+      },
+    },
+    rules: {
+      'import-x/no-extraneous-dependencies': ['error', { devDependencies: true }],
     },
   },
 ];
