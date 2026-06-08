@@ -1,12 +1,14 @@
 {
   "name": "automata-app",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "description": "pre configured express app",
-  "main": "dist/index.bundle.js",
   "type": "commonjs",
   "files": [
     "dist/index.bundle.js"
   ],
+  "exports": {
+    ".": "./dist/index.bundle.js"
+  },
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
