@@ -13,6 +13,7 @@ const appBuilder = ({
   EMAIL_VERIFICATION_SECRET,
   origin = ['http://localhost:3000'],
   SECRET,
+  morganOpts = 'tiny',
 }) => {
   const app = express();
 
@@ -20,7 +21,7 @@ const appBuilder = ({
 
   app.use(express.json());
 
-  if (NODE_ENV !== 'test') { app.use(morgan('tiny')); }
+  if (NODE_ENV !== 'test' && morganOpts) { app.use(morgan(morganOpts)); }
 
   app.get('/health', (req, res) => { res.status(200).send('OK'); });
 
