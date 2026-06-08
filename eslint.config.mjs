@@ -23,17 +23,10 @@ export default [
   // general
   {
     rules: {
+      '@stylistic/array-bracket-newline': ['error', 'consistent'],
+      '@stylistic/array-element-newline': ['error', 'consistent'],
       '@stylistic/multiline-ternary': ['error', 'always-multiline'],
-      'no-console': [
-        SHOW_WARNINGS,
-        {
-          allow: [
-            'info',
-            'warn',
-            'error',
-          ],
-        },
-      ],
+      'no-console': [SHOW_WARNINGS, { allow: ['info', 'warn', 'error'] }],
       'prefer-named-capture-group': ['error'],
       'require-unicode-regexp': ['error'],
       'sort-keys': ['warn'],
@@ -76,15 +69,8 @@ export default [
     },
   },
   {
-    files: ['src/tests/**', 'src/tests/rest/**'],
-    languageOptions: {
-      globals: {
-        ...globals.jest,
-        ...globals.node,
-      },
-    },
-    rules: {
-      'import-x/no-extraneous-dependencies': ['error', { devDependencies: true }],
-    },
+    files: ['src/tests/rest/**'],
+    languageOptions: { globals: { ...globals.jest, ...globals.node } },
+    rules: { 'import-x/no-extraneous-dependencies': ['error', { devDependencies: true }] },
   },
 ];

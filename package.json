@@ -1,6 +1,6 @@
 {
   "name": "automata-app",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "description": "pre configured express app",
   "main": "dist/index.bundle.js",
   "type": "commonjs",
