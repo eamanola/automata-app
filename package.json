@@ -1,6 +1,6 @@
 {
   "name": "automata-app",
-  "version": "0.1.23",
+  "version": "0.1.24",
   "description": "pre configured express app",
   "type": "commonjs",
   "files": [
@@ -22,9 +22,14 @@
   },
   "keywords": [
     "express",
-    "app"
+    "app",
+    "preconfigured"
   ],
-  "author": "Ehsun Amanolahi",
+  "author": {
+    "name": "Ehsun Amanolahi",
+    "email": "ehsun.amanolahi@gmail.com",
+    "url": "https://codeberg.org/eamanola"
+  },
   "license": "AGPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/eamanola/automata-app/issues"
