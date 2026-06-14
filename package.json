@@ -1,6 +1,6 @@
 {
   "name": "automata-app",
-  "version": "0.1.25",
+  "version": "0.1.26",
   "description": "pre configured express app",
   "type": "commonjs",
   "files": [
@@ -55,7 +55,6 @@
     "automata-user-management": "github:eamanola/automata-user-management",
     "automata-utils": "github:eamanola/automata-utils",
     "cors": "^2.8.6",
-    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "morgan": "^1.11.0"
   }

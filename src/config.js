@@ -1,4 +1,4 @@
-require('dotenv').config({ quiet: true });
+// require('dotenv').config({ quiet: true });
 
 const { NODE_ENV } = process.env;
 
