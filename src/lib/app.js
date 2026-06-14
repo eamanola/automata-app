@@ -9,6 +9,7 @@ const { NODE_ENV } = require('../config');
 const { errorHandler } = middlewares;
 
 const appBuilder = ({
+  cache,
   db,
   EMAIL_VERIFICATION_SECRET,
   origin = ['http://localhost:3000'],
@@ -25,7 +26,9 @@ const appBuilder = ({
 
   app.get('/health', (req, res) => { res.status(200).send('OK'); });
 
-  app.use(users({ db, EMAIL_VERIFICATION_SECRET, SECRET }));
+  app.use(users({
+    cache, db, EMAIL_VERIFICATION_SECRET, SECRET,
+  }));
 
   app.use(errorHandler(errors, { defaultTo500: true }));
 

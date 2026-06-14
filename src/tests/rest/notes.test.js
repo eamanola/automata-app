@@ -1,5 +1,7 @@
 const supertest = require('supertest');
 const { errors } = require('automata-utils');
+const { closeCache, connectCache } = require('automata-cache');
+const { drivers } = require('automata-db');
 
 const {
   createNote, getNote, getToken, validNote,
@@ -9,15 +11,21 @@ const appBuilder = require('../..');
 
 const BASE_URL = '/notes';
 let api;
-const { db } = global;
+let cache;
+const db = drivers({ DB_ENGINE: 'sqlite' });
 
 describe('/notes', () => {
   beforeAll(async () => {
     const SECRET = `shhh ${Math.random()}`;
     const EMAIL_VERIFICATION_SECRET = `sshh ${Math.random()}`;
 
-    const app = appBuilder({ db, EMAIL_VERIFICATION_SECRET, SECRET });
-    app.use(BASE_URL, router({ db }));
+    await db.connectDB(':memory:');
+    cache = await connectCache('use-mock');
+
+    const app = appBuilder({
+      cache, db, EMAIL_VERIFICATION_SECRET, SECRET,
+    });
+    app.use(BASE_URL, router({ cache, db }));
     api = supertest(app);
   });
 
@@ -27,6 +35,8 @@ describe('/notes', () => {
 
   afterAll(async () => {
     await db.dropTable(tableName);
+    await db.closeDB();
+    await closeCache(cache);
   });
 
   it('should throw accessDenied, if user missing', async () => {

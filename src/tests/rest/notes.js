@@ -5,21 +5,21 @@ const { NODE_ENV } = require('../../config');
 const tableName = 'test-notes';
 
 const columns = [
-  { name: 'imageUrl', type: 'string' },
-  { name: 'isPublic', required: true, type: 'bool' },
-  { name: 'text', required: true, type: 'string' },
+  { name: 'imageUrl', type: String },
+  { name: 'isPublic', required: true, type: Boolean },
+  { name: 'text', required: true, type: String },
 ];
 
 const indexes = [{ columns: ['isPublic'], name: `idx-${tableName}-isPublic` }];
 
 const table = { columns, indexes, name: tableName };
 
-const router = ({ db }) => restRouter(null, {
+const router = ({ cache, db }) => restRouter(null, {
+  cache,
   db,
   resultKey: 'note',
   resultsKey: 'notes',
   table,
-  useCache: true,
   userRequired: true,
 });
 
