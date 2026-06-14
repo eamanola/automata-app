@@ -1,6 +1,6 @@
 {
   "name": "automata-app",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "description": "pre configured express app",
   "type": "commonjs",
   "files": [
@@ -25,7 +25,7 @@
     "app"
   ],
   "author": "Ehsun Amanolahi",
-  "license": "ISC",
+  "license": "AGPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/eamanola/automata-app/issues"
   },
